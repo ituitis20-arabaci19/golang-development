@@ -2,9 +2,15 @@ module github.com/ituitis20-arabaci19/golang-development-template
 
 go 1.20
 
-require rsc.io/quote v1.5.2
+require (
+	golang.org/x/net v0.7.0
+	google.golang.org/grpc v1.53.0
+	google.golang.org/protobuf v1.28.1
+)
 
 require (
-	golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c // indirect
-	rsc.io/sampler v1.3.0 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
+	golang.org/x/sys v0.5.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
+	google.golang.org/genproto v0.0.0-20230227214838-9b19f0bdc514 // indirect
 )
