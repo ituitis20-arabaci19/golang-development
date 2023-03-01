@@ -1,0 +1,36 @@
+syntax = "proto3";
+package profile;
+
+option go_package = "proto/profile;profile";
+
+// The profile service definition.
+service ProfileService {
+  // create a profile
+  rpc Create (CreateUserRequest) returns (CreateUserResponse) {}
+  rpc CreateMulti (stream CreateUserRequest) returns (CreateUserResponse) {}
+  rpc ReadUser (ReadUserRequest) returns (stream ReadUserResponse) {}
+}
+
+// The request message containing the user's name
+message ReadUserRequest {
+  string nickname = 1;
+}
+
+// The response message containing the profile
+message ReadUserResponse {
+  int32 id = 1;
+  string nickname = 2;
+  string name = 3;
+}
+
+// The request message containing the user's name, is_verified, id
+message CreateUserRequest {
+  string name = 1;
+  string nickname = 2;
+  bool is_verified = 3;
+}
+
+// The response message containing the profile
+message CreateUserResponse {
+  string message = 1;
+}
